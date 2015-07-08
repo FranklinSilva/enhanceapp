@@ -1,0 +1,164 @@
+
+/* SCSS variables !! */
+
+/* COLORS */
+// --------------------------------
+
+$stable:                          	#1A2732 !default; // Main blue material design (used as background app)
+$light:                           	#C0BCBC !default; // Light Gray
+$positive:                        	#3D9788 !default; // Green material design
+$balanced:                       	#FF6F5C !default; // Red material design.. warning section color
+$energized:                       	#FF6F5C !default; // Yellow material design... attention section color
+$royal:                           	#848F8A !default; // Heavy gray material design
+$calm:                            	#283844 !default; // Light blue material design
+$assertive:                       	#101822 !default; // Dark blue material design
+
+$base-background-color:           #1A2732 !default;
+
+$blue-card:							#0FB1C0 !default;
+
+/* FONT SYSTEM */
+// --------------------------------
+
+$font-size-base:                  20px !default;
+$font-size-large:                 28px !default;
+$font-size-small:                 18px !default;
+$font-size-xsmall:				  16px !default;
+
+$bar-title-font-size:             24px !default;
+
+
+$font-white: 						#EAEAEA !default;
+
+$font-family-sans-serif: 			"futura-medium" !default;
+$font-family-light-sans-serif:    	"futura-condensedmedium" !default;
+$font-family-serif:               	futura !default;
+$font-family-monospace:           	futura !default;
+
+$font-style-title:					italic !default;
+
+// Bars
+// -------------------------------
+
+$bar-height:                      50px !default;
+$bar-title-font-size:             24px !default;
+
+$bar-stable-text:                 #EAEAEA !default;
+
+// Cards
+// -------------------------------
+
+$card-header-bg:                  #F5F5F5 !default;
+$card-body-bg:                    #fff !default;
+$card-footer-bg:                  #F5F5F5 !default;
+
+$card-padding:                    10px !default;
+$card-border-width:               1px !default;
+
+$card-border-color:               #ccc !default;
+$card-border-radius:              2px !default;
+$card-box-shadow:                 0 1px 3px rgba(0, 0, 0, .3) !default;
+
+// Items
+// -------------------------------
+
+$item-font-size:                  24px !default;
+$item-border-width:               1px !default;
+$item-padding:                    16px !default;
+
+$item-button-font-size:           18px !default;
+$item-button-line-height:         32px !default;
+$item-icon-font-size:             32px !default;
+$item-icon-fill-font-size:        28px !default;
+
+$item-icon-accessory-color:       #ccc !default;
+$item-icon-accessory-font-size:   16px !default;
+
+$item-avatar-width:               40px !default;
+$item-avatar-height:              40px !default;
+$item-avatar-border-radius:       50% !default;
+
+$item-thumbnail-width:            80px !default;
+$item-thumbnail-height:           80px !default;
+$item-thumbnail-margin:           10px !default;
+
+$item-divider-bg:                 #f5f5f5 !default;
+$item-divider-color:              #222 !default;
+$item-divider-padding:            5px 15px !default;
+
+
+
+//The path for our ionicons font files, relative to the built CSS in www/css*/
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+.item-divider {
+  padding-top: 150px ;
+  padding-bottom: 8px ;
+  min-height: 30px ;
+  background-color: $blue-card ;
+  color: $font-white ;
+  font-weight: 500 ;
+  font-style: italic ;
+  font-family: $font-family-sans-serif ;
+}
+
+.item-footer {
+  min-height: 30px ;
+  background-color: $light ;
+  color: #222 ;
+  font-weight: 500 ; 
+}
+
+h1.italic{
+	font-style: italic ;
+}
+
+.wrapper{
+	margin-top: 40px;
+}
+
+.card{
+	margin: 2% 5%;
+}
+
+.round-button{
+	border-radius: 30px;
+}
+
+.round-plus{
+	background-color: $positive !important;
+	border-color: none !important;
+}
+
+.button-round {
+  border-color: #b2b2b2;
+  background-color: #1A2732;
+  color: #EAEAEA;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0 15px;
+  min-width: 52px;
+  min-height: 50px;
+  border-width: 1px;
+  border-style: solid;
+  vertical-align: top;
+  text-align: center;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  line-height: 32px;
+  cursor: pointer; }
+
+.bar .button{
+	padding: 0 3px;
+}
+
+.bar .title + .button-round:last-child{
+	top: 24px;
+  	right: 5px;
+  	 position: absolute;
+  bottom: 5px;
+}
