@@ -1,0 +1,56 @@
+<modal-create-page>
+		<ion-modal-view>
+		<ion-content>
+			<h2>Add Task</h2>
+
+			<div class="list">
+			  <label class="item item-input">
+			    <input type="text" placeholder="Task Name">
+			  </label>
+			  <label class="item item-input">
+			    <textarea placeholder="Description"></textarea>
+			  </label>
+			  <label class="item item-input">
+			    <span>Deadline:</span> <input type="date">
+			  </label>
+				<ul class="list">
+					<li class="item item-toggle">
+						Important?
+						<label class="toggle">
+						  <input type="checkbox">
+						   <div class="track">
+						     <div class="handle"></div>
+						   </div>
+						</label>
+					</li>
+					<li class="item item-toggle">						
+						Urgent?
+						<label class="toggle">
+						   <input type="checkbox">
+						   <div class="track">
+						     <div class="handle"></div>
+						   </div>
+						</label>
+					</li>	
+				</ul>	
+				<label class="item item-input item-select">
+				    <div class="input-label">
+				      Lightsaber
+				    </div>
+				    <select>
+				      <option>Blue</option>
+				      <option selected>Green</option>
+				      <option>Red</option>
+				    </select>
+				</label>				
+
+			</div>
+
+			<button class="button-round icon ion-close-round balanced" on-tap="modal.hide()"></button>
+  				<label class="item item-input">
+    				<input type="text" placeholder="Write a comment">
+  				</label>
+		</ion-content>
+	</ion-modal-view>
+
+</modal-create-page>

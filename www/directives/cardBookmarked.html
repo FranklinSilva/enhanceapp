@@ -1,7 +1,10 @@
 <div class="card">
-	<div class="item item-divider">
-	{{ card.name }}
+	<div ng-style="myStyle={'background-color':'{{ style.myStyle }}'}" class="item item-divider blue-card">
+		{{ card.name }}
 	</div>
 	<div class="item item-footer">
+		<button class="button button-icon icon ion-power button-small" on-tap="openModal(1)"></button>
+		<button class="button button-icon icon ion-pricetag button-small"></button> 
+		<button class="button button-icon icon ion-log-in button-small" on-tap="openModal(2)"></button> 
 	</div>
 </div>

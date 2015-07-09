@@ -22,15 +22,45 @@
   <body ng-app="enhanceApp">
 
     <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <button class="button button-icon icon ion-gear-b button-small"></button>
-        <button class="button button-icon icon ion-compass button-small"></button>
-        <button class="button button-icon icon ion-stats-bars button-small"></button>        
+      <ion-header-bar ng-controller="headerController" class="bar-stable">
+        <button class="button-icon button-icon-top icon ion-gear-b button-small"></button>
+        <button class="button-icon button-icon-top icon ion-compass button-small"></button>
+        <button class="button-icon button-icon-top icon ion-stats-bars button-small"></button>        
         <h1 class="title italic">Enhance</h1>
-        <button class="button-round icon ion-plus-round round-button round-plus"></button>
+        <button class="button-round icon ion-plus-round positive" on-tap="modal.show()"></button>
       </ion-header-bar>
       <ion-content>
-  <div ng-view></div>
+        <!--<div ng-view></div> -->
+        
+        <ion-slide-box active-slide="1" show-pager="false" on-slide-changed="slideHasChanged($index)">
+          <ion-slide ng-controller="warningController">
+            <div class="wrapper">
+              <h3> Warning Zone!! </h3>
+              <p>"These tasks are urgent and important, finish them quickly"</p>  
+              <card-bookmarked></card-bookmarked>
+              <card-small></card-small>
+              <card-small></card-small>
+            </div>
+          </ion-slide>
+          <ion-slide ng-controller="mainController">
+            <div class="wrapper"> 
+              <card-bookmarked></card-bookmarked>
+              <card-small></card-small>
+              <card-small></card-small>
+            </div>
+            <modalCycle></modalCycle>            
+          </ion-slide>
+          <ion-slide ng-controller="attentionController">
+            <div class="wrapper">
+              <h3>Attention Zone!!</h3>
+              <p>"Tasks here are urgent and non-important, don't make them ruine your important ones"</p> 
+              <card-bookmarked></card-bookmarked>
+              <card-small></card-small>
+              <card-small></card-small>
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+
       </ion-content>
     </ion-pane>
   </body>
