@@ -1,13 +1,11 @@
 <modal-card-show>
-		<ion-modal-view>
+	<ion-modal-view>
 		<ion-content>
 			
 			<button class="button-round icon ion-close-round balanced" on-tap="closeModal(2)"></button>
 			
-			<card-big></card-big>
-
-
+			<card-big ng-repeat="card in idealTask"></card-big>
+		
  		</ion-content>
 	</ion-modal-view>
-
 </modal-card-show>

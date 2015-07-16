@@ -38,5 +38,22 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "io.litehelpers.cordova.sqlite": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/brodysoft/Cordova-SQLitePlugin.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "io.litehelpers.cordova.sqliteStorage": {
+        "source": {
+            "type": "registry",
+            "id": "io.litehelpers.cordova.sqlitestorage"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

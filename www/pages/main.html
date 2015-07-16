@@ -1,6 +1,28 @@
-<div on-swipe-left="swipeLeft()" on-swipe-right="swipeRight()" class="wrapper">	
-	<card-bookmarked></card-bookmarked>
-	<card-small></card-small>
-	<card-small></card-small>
-</div>
-<modalCycle></modalCycle>
+        <ion-slide-box delegate-handle="card-small-list" active-slide="1" show-pager="false" on-slide-changed="slideHasChanged($index)">
+          <ion-slide ng-controller="warningController">
+            <div class="wrapper">
+              <h3> Warning Zone!! </h3>
+              <p>"These tasks are urgent and important, finish them quickly"</p>  
+              <div class="row">              
+                  <card-bookmarked ng-repeat="card in groupTask" ng-if="card.important && card.urgent" ></card-bookmarked>
+              </div>    
+            </div>
+          </ion-slide>
+          <ion-slide ng-controller="mainController">
+            <div class="wrapper"> 
+              <div class="row">
+                <card-bookmarked ng-repeat="task in tasks" ng-if="task.Important && !task.Urgent" ></card-bookmarked>
+              </div>
+            </div>
+            <modalCycle></modalCycle>            
+          </ion-slide>
+          <ion-slide ng-controller="attentionController">
+            <div class="wrapper">
+              <h3>Attention Zone!!</h3>
+              <p>"Tasks here are urgent and non-important, don't make them ruine your important ones"</p> 
+              <div class="row">
+                <card-bookmarked ng-repeat="card in groupTask" ng-if="!card.important && card.urgent"></card-bookmarked>
+              </div>
+            </div>
+          </ion-slide>
+        </ion-slide-box>

@@ -5,19 +5,19 @@
 
 			<div class="list">
 			  <label class="item item-input">
-			    <input type="text" placeholder="Task Name">
+			    <input type="text" ng-model="task.Name" placeholder="Task Name">
 			  </label>
 			  <label class="item item-input">
-			    <textarea placeholder="Description"></textarea>
+			    <textarea ng-model="task.Description" placeholder="Description"></textarea>
 			  </label>
 			  <label class="item item-input">
-			    <span>Deadline:</span> <input type="date">
+			    <span>Deadline:</span> <input type="task.Endate">
 			  </label>
 				<ul class="list">
 					<li class="item item-toggle">
 						Important?
 						<label class="toggle">
-						  <input type="checkbox">
+						  <input ng-model="task.Important" type="checkbox">
 						   <div class="track">
 						     <div class="handle"></div>
 						   </div>
@@ -26,7 +26,7 @@
 					<li class="item item-toggle">						
 						Urgent?
 						<label class="toggle">
-						   <input type="checkbox">
+						   <input ng-model="task.Urgent" type="checkbox">
 						   <div class="track">
 						     <div class="handle"></div>
 						   </div>
@@ -46,7 +46,7 @@
 
 			</div>
 
-			<button class="button-round icon ion-close-round balanced" on-tap="modal.hide()"></button>
+			<button class="button-round icon ion-close-round balanced" on-tap="saveTask()"></button>
   				<label class="item item-input">
     				<input type="text" placeholder="Write a comment">
   				</label>

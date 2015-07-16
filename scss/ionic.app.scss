@@ -8,7 +8,7 @@ $stable:                          	#1A2732 !default; // Main blue material desig
 $light:                           	#C0BCBC !default; // Light Gray
 $positive:                        	#3D9788 !default; // Green material design
 $balanced:                       	#FF6F5C !default; // Red material design.. warning section color
-$energized:                       	#FF6F5C !default; // Yellow material design... attention section color
+$energized:                       	#edc85f !default; // Yellow material design... attention section color
 $royal:                           	#848F8A !default; // Heavy gray material design
 $calm:                            	#283844 !default; // Light blue material design
 $assertive:                       	#101822 !default; // Dark blue material design
@@ -16,12 +16,12 @@ $assertive:                       	#101822 !default; // Dark blue material desig
 $base-background-color:           #1A2732 !default;
 
 $blue-card:							#0FB1C0 !default;
-$red-card:							red !default;
-$orange-card:							orange !default;
-$green-card:							green !default;
-$violet-card:							violet !default;
-$yellow-card:							yellow !default;
-
+$red-card:							#B43E3E !default;
+$orange-card:							#B5783E !default;
+$green-card:							#3EB55B !default;
+$violet-card:							#960093 !default;
+$yellow-card:							#B48E3E !default; //H S66 B71
+$base-card:								#E7E8E8 !default;
 /* FONT SYSTEM */
 // --------------------------------
 
@@ -105,7 +105,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 	font-size: 22px;
 }
 
-.item-divider {
+.item-big {
   padding-top: 150px ;
   padding-bottom: 8px ;
   min-height: 30px ;
@@ -116,22 +116,22 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   font-family: $font-family-sans-serif ;
 }
 
-.item.item-divider.blue-card{
+.item.item-big.blue-card, .item.card-open-header.blue-card{
 	background-color: $blue-card;}
-.item.item-divider.red-card{
+.item.item-big.red-card, .item.card-open-header.red-card{
 	background-color: $red-card;}
-.item.item-divider.orange-card{
+.item.item-big.orange-card, .item.card-open-header.orange-card{
 	background-color: $orange-card;}
-.item.item-divider.green-card{
+.item.item-big.green-card, .item.card-open-header.green-card{
 	background-color: $green-card;}
-.item.item-divider.violet-card{
+.item.item-big.violet-card, .item.card-open-header.violet-card{
 	background-color: $violet-card;}
-.item.item-divider.yellow-card{
+.item.item-big.yellow-card, .item.card-open-header.yellow-card{
 	background-color: $yellow-card;}
 
 .item-footer {
   min-height: 30px ;
-  background-color: $light !important;
+  background-color: $base-card !important;
   color: #222;
   font-weight: 500 ; 
   padding: 8px;
@@ -146,7 +146,7 @@ h1.italic{
 }
 
 .card{
-	margin: 2% 5%;
+	margin: 2% 0;
 	border-radius: 5px;
 	box-shadow: 2px 2px 5px #000;
 }
@@ -154,6 +154,27 @@ h1.italic{
 .wrapper h3,p{
 	color: $light;
 	text-align: center;
+}
+
+.item.card-open-body{
+  margin: 10px 10px 0;
+}
+
+.item.card-open-body h4{
+  font-size: $font-size-base;
+  font-weight: 300;
+}
+
+.item.card-open-body p.no-overflow{
+  overflow: visible ;
+  text-overflow: none;
+  white-space: pre;
+  text-align: left;
+}
+
+.card h2{
+  font-size: $font-size-large;
+  text-align: left;
 }
 
 .button-icon-top{
@@ -304,3 +325,48 @@ textarea{
     padding-right: 10px;
     background-color: transparent; }
 //END LABEL
+
+.row{
+	flex-wrap: wrap;;
+}
+
+.col100{
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 100%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+  transition: 0.5s;
+}
+
+.col50{
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 50%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 50%;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
+  transition: 0.5s;
+}
+
+.bar.bar-stable {
+  border-bottom: solid 1px;
+}
+
+/*LIST*/
+.list.list-inset div.item{
+  font-size: $font-size-xsmall;
+  border-bottom: solid 2px #888;
+}
+
+.list.list-inset div.item.item-divider{
+  text-align: center;
+  font-size: $font-size-base;
+}
+
+.list.list-inset{
+  margin-top: 0;
+}

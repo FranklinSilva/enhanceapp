@@ -1,1 +1,13 @@
-<h1>LATERRR</h1>
+<div class="card" ng-if= "card.bookmarked">
+	<div ng-style="myStyle={'background-color':'{{ style.myStyle }}'}" class="item item-divider blue-card">
+		{{ card.name }}
+	</div>
+	<div class="item item-footer">
+		<p>{{ card.description }}</p>
+	</div>
+	<div class="item item-footer">
+		<button class="button button-icon icon ion-power button-small" on-tap="openModal(1)"></button>
+		<button class="button button-icon icon ion-pricetag button-small"></button> 
+		<button class="button button-icon icon ion-log-in button-small" on-tap="openModal(2)"></button> 
+	</div>
+</div>
