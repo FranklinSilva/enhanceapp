@@ -4,8 +4,9 @@
 enhanceApp.controller('mainController', ['$scope', '$log', '$ionicModal', '$route','$ionicPlatform', 'bookmarking', 'taskService', function($scope, $log, $ionicModal, $route, $ionicPlatform, bookmarking, taskService) {
 
   $scope.isBookmarked = function(y){
-    $scope.tasks[y].bookmarked = bookmarking.isBookmarked($scope.tasks[y].bookmarked);
-
+    console.log($scope)
+    $scope.tasks[y].Bookmarked = bookmarking.isBookmarked($scope.tasks[y].Bookmarked);
+    taskService.updateTask($scope.tasks[y]);
   }
 
   $ionicPlatform.ready(function() {
@@ -14,9 +15,14 @@ enhanceApp.controller('mainController', ['$scope', '$log', '$ionicModal', '$rout
     // Get all task records from the database.
     taskService.getAllTasks().then(function(tasks) {
       $scope.tasks = tasks;
-      console.log('entrei!')
+      console.log('entrei! Meio')
     });
   });
+
+  $scope.keepName = function(task){
+    taskService.keepName = task;
+    console.log(task)
+  }
 
   $scope.openModalCycle = function() {
 
@@ -70,115 +76,52 @@ enhanceApp.controller('mainController', ['$scope', '$log', '$ionicModal', '$rout
 
   }]);
 
-enhanceApp.controller('warningController', ['$scope', '$log', '$routeParams', '$ionicModal', 'bookmarking', function($scope, $log, $routeParams, $ionicModal, bookmarking) {
+enhanceApp.controller('warningController', ['$scope', '$log', '$routeParams', '$ionicModal','$ionicPlatform', 'bookmarking', 'taskService', function($scope, $log, $routeParams, $ionicModal,$ionicPlatform, bookmarking, taskService) {
 
   $scope.isBookmarked = function(y){
-    $scope.groupTask[y].bookmarked = bookmarking.isBookmarked($scope.groupTask[y].bookmarked);
-
+    console.log($scope)
+    $scope.tasks[y].Bookmarked = bookmarking.isBookmarked($scope.tasks[y].Bookmarked);
+    taskService.updateTask($scope.tasks[y]);
   }
+
+  $ionicPlatform.ready(function() {
+    taskService.initDB();
+
+    // Get all task records from the database.
+    taskService.getAllTasks().then(function(tasks) {
+      $scope.tasks = tasks;
+      console.log('entrei! Vermelho')
+    });
+  });
 
   $scope.style ={
     myStyle: '#FF6F5C'
   }
 
-  $scope.groupTask = [
-  {
-    name: 'Study Mathematics',
-    description: 'Minions ipsum potatoooo daa poulet tikka masala. Tatata bala tu bananaaaa la bodaaa jiji underweaaar. Tank yuuu! poopayee jeje bappleees baboiii para tú baboiii bee do bee do bee do uuuhhh. Hana dul sae poulet tikka masala me want bananaaa! Pepete belloo! Poulet tikka masala jeje. Hahaha jiji hahaha jiji poulet tikka masala hahaha me want bananaaa! Belloo! Tank yuuu! la bodaaa bappleees belloo! Hana dul sae hahaha. Potatoooo gelatooo bappleees bappleees tank yuuu! Underweaaar uuuhhh hana dul sae. Para tú para tú bappleees hahaha gelatooo chasy la bodaaa para tú aaaaaah uuuhhh butt. Gelatooo belloo! Tank yuuu! Poulet tikka masala tatata bala tu tatata bala tu potatoooo jeje uuuhhh jeje wiiiii.',
-    important: true,
-    urgent: false,
-    cyclesNeeded: 4,
-    cyclesCurrent: 2,
-    bookmarked: true
-  },
-
-  {
-    name: 'Buy Beer for Sunday',
-    description: 'Minions ipsum esse tempor bee do bee do bee do bee do bee do bee do minim para tú esse minim. Irure uuuhhh consectetur aaaaaah belloo! Poopayee duis elit pepete officia ti aamoo! Nostrud incididunt potatoooo cillum ut butt commodo. Enim bee do bee do bee do aute tulaliloo. Tempor reprehenderit bappleees nisi. Incididunt sed incididunt la bodaaa chasy qui sed ad ti aamoo! Consequat la bodaaa la bodaaa et. Tatata bala tu bappleees baboiii ullamco.',
-    important: false,
-    urgent: true,
-    cyclesNeeded: 4,
-    cyclesCurrent: 2,
-    bookmarked: false
-  },
-
-  {
-    name: 'Work on Project',
-    description: 'Minions ipsum esse tempor bee do bee do bee do bee do bee do bee do minim para tú esse minim. Irure uuuhhh consectetur aaaaaah belloo! Poopayee duis elit pepete officia ti aamoo! Nostrud incididunt potatoooo cillum ut butt commodo. Enim bee do bee do bee do aute tulaliloo. Tempor reprehenderit bappleees nisi. Incididunt sed incididunt la bodaaa chasy qui sed ad ti aamoo! Consequat la bodaaa la bodaaa et. Tatata bala tu bappleees baboiii ullamco. ',
-    important: true,
-    urgent: false,
-    cyclesNeeded: 4,
-    cyclesCurrent: 2,
-    bookmarked: false
-  },
-
-  {
-    name: 'Meeting with Mayor',
-    description: 'Minions ipsum esse tempor bee do bee do bee do bee do bee do bee do minim para tú esse minim. Irure uuuhhh consectetur aaaaaah belloo! Poopayee duis elit pepete officia ti aamoo! Nostrud incididunt potatoooo cillum ut butt commodo. Enim bee do bee do bee do aute tulaliloo. Tempor reprehenderit bappleees nisi. Incididunt sed incididunt la bodaaa chasy qui sed ad ti aamoo! Consequat la bodaaa la bodaaa et. Tatata bala tu bappleees baboiii ullamco. ',
-    important: true,
-    urgent: true,
-    cyclesNeeded: 4,
-    cyclesCurrent: 2,
-    bookmarked: false
-  }
-
-  ]
-
 }]);
 
-enhanceApp.controller('attentionController', ['$scope', '$log', '$routeParams','$ionicModal', 'bookmarking', function($scope, $log, $routeParams, $ionicModal, bookmarking) {
+enhanceApp.controller('attentionController', ['$scope', '$log', '$routeParams','$ionicModal','$ionicPlatform', 'bookmarking','taskService', function($scope, $log, $routeParams, $ionicModal,$ionicPlatform, bookmarking, taskService) {
 
   $scope.isBookmarked = function(y){
-    $scope.groupTask[y].bookmarked = bookmarking.isBookmarked($scope.groupTask[y].bookmarked);
-
+    console.log($scope)
+    $scope.tasks[y].Bookmarked = bookmarking.isBookmarked($scope.tasks[y].Bookmarked);
+    taskService.updateTask($scope.tasks[y]);
   }
+
+  $ionicPlatform.ready(function() {
+    taskService.initDB();
+
+    // Get all task records from the database.
+    taskService.getAllTasks().then(function(tasks) {
+      $scope.tasks = tasks;
+      console.log('entrei! Amarelo')
+    });
+  });
 
   $scope.style ={
     myStyle: '#edc85f'
   }
 
-  $scope.groupTask = [
-  {
-    name: 'Study Mathematics',
-    description: 'Minions ipsum potatoooo daa poulet tikka masala. Tatata bala tu bananaaaa la bodaaa jiji underweaaar. Tank yuuu! poopayee jeje bappleees baboiii para tú baboiii bee do bee do bee do uuuhhh. Hana dul sae poulet tikka masala me want bananaaa! Pepete belloo! Poulet tikka masala jeje. Hahaha jiji hahaha jiji poulet tikka masala hahaha me want bananaaa! Belloo! Tank yuuu! la bodaaa bappleees belloo! Hana dul sae hahaha. Potatoooo gelatooo bappleees bappleees tank yuuu! Underweaaar uuuhhh hana dul sae. Para tú para tú bappleees hahaha gelatooo chasy la bodaaa para tú aaaaaah uuuhhh butt. Gelatooo belloo! Tank yuuu! Poulet tikka masala tatata bala tu tatata bala tu potatoooo jeje uuuhhh jeje wiiiii.',
-    important: true,
-    urgent: false,
-    cyclesNeeded: 4,
-    cyclesCurrent: 2,
-    bookmarked: true
-  },
-
-  {
-    name: 'Buy Beer for Sunday',
-    description: 'Minions ipsum esse tempor bee do bee do bee do bee do bee do bee do minim para tú esse minim. Irure uuuhhh consectetur aaaaaah belloo! Poopayee duis elit pepete officia ti aamoo! Nostrud incididunt potatoooo cillum ut butt commodo. Enim bee do bee do bee do aute tulaliloo. Tempor reprehenderit bappleees nisi. Incididunt sed incididunt la bodaaa chasy qui sed ad ti aamoo! Consequat la bodaaa la bodaaa et. Tatata bala tu bappleees baboiii ullamco.',
-    important: false,
-    urgent: true,
-    cyclesNeeded: 4,
-    cyclesCurrent: 2,
-    bookmarked: false
-  },
-
-  {
-    name: 'Work on Project',
-    description: 'Minions ipsum esse tempor bee do bee do bee do bee do bee do bee do minim para tú esse minim. Irure uuuhhh consectetur aaaaaah belloo! Poopayee duis elit pepete officia ti aamoo! Nostrud incididunt potatoooo cillum ut butt commodo. Enim bee do bee do bee do aute tulaliloo. Tempor reprehenderit bappleees nisi. Incididunt sed incididunt la bodaaa chasy qui sed ad ti aamoo! Consequat la bodaaa la bodaaa et. Tatata bala tu bappleees baboiii ullamco. ',
-    important: true,
-    urgent: false,
-    cyclesNeeded: 4,
-    cyclesCurrent: 2,
-    bookmarked: false
-  },
-
-  {
-    name: 'Meeting with Mayor',
-    description: 'Minions ipsum esse tempor bee do bee do bee do bee do bee do bee do minim para tú esse minim. Irure uuuhhh consectetur aaaaaah belloo! Poopayee duis elit pepete officia ti aamoo! Nostrud incididunt potatoooo cillum ut butt commodo. Enim bee do bee do bee do aute tulaliloo. Tempor reprehenderit bappleees nisi. Incididunt sed incididunt la bodaaa chasy qui sed ad ti aamoo! Consequat la bodaaa la bodaaa et. Tatata bala tu bappleees baboiii ullamco. ',
-    important: true,
-    urgent: true,
-    cyclesNeeded: 4,
-    cyclesCurrent: 2,
-    bookmarked: false
-  }
-
-  ]
 
 }]);
 
@@ -207,7 +150,8 @@ enhanceApp.controller('headerController', ['$scope', '$log', '$routeParams','$io
 
     $scope.task = {
       Important: false,
-      Urgent: false
+      Urgent: false,
+      Bookmarked: false
     };
 
   $scope.saveTask = function() {
@@ -232,16 +176,18 @@ enhanceApp.controller('headerController', ['$scope', '$log', '$routeParams','$io
 
 }]);
 
-enhanceApp.controller('cardPageController', ['$scope', '$log', '$routeParams','$ionicModal', function($scope, $log, $routeParams, $ionicModal) {
+enhanceApp.controller('cardPageController', ['$scope', '$log', '$routeParams','$ionicModal','$ionicPlatform','taskService', function($scope, $log, $routeParams, $ionicModal,$ionicPlatform, taskService) {
 
-  $scope.card =     {
-    name: 'Study Mathematics',
-    description: 'Minions ipsum potatoooo daa poulet tikka masala. Tatata bala tu bananaaaa la bodaaa jiji underweaaar. Tank yuuu! poopayee jeje bappleees baboiii para tú baboiii bee do bee do bee do uuuhhh. Hana dul sae poulet tikka masala me want bananaaa! Pepete belloo! ',
-    important: true,
-    urgent: false,
-    cyclesNeeded: 4,
-    cyclesCurrent: 2,
-    bookmarked: true
-  }
+ $ionicPlatform.ready(function() {
+    taskService.initDB();
+
+    // Get all task records from the database.
+    taskService.getAllTasks().then(function(tasks) {
+      $scope.tasks = tasks;
+      console.log('entrei! Big')
+    });
+  });
+
+ $scope.task = taskService.keepName;
 
 }]);

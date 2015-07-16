@@ -23,9 +23,9 @@ enhanceApp.service('bookmarking', function(){
 
   this.isBookmarked = function(y){
     if (y == true) {
-      return self.bookmarked = false;
+      return self.Bookmarked = false;
     } else{
-      return self.bookmarked = true;  
+      return self.Bookmarked = true;  
     }      
   }
 })
@@ -117,6 +117,11 @@ enhanceApp.factory('taskService', ['$q', function($q){
         array[mid]._id < id ? low = mid + 1 : high = mid
       }
       return low;
+    }
+
+    function keepName(task) {
+      return keepName = task;
+      console.log('passei por aqui' + task)
     }
 
 }])

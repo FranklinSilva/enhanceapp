@@ -1,10 +1,10 @@
 <div class="card">
-	<div class="item card-open-header blue-card">
-		<h2>{{ card.name }}</h2>
+	<div class="item card-open-header {{task.Color}}-card">
+		<h2>{{ task.Name }}</h2>
 	</div>
 	<div class="item card-open-body">
 		<h4>Descrição:</h4>
-		<p class="no-overflow">{{ card.description }}</p>
+		<p class="no-overflow">{{ task.Description }}</p>
 	</div>
 	<div class="list list-inset">
 		<div class="item item-divider">
@@ -32,6 +32,6 @@
 	</div>
 	<div class="item card-open-footer">
 		<button class="button button-icon icon ion-power button-small" on-tap="openModal(1)"></button>
-		<button class="button button-icon icon ion-pricetag button-small"></button> </button> 
+		<a href="#/">voltar<button class="button button-icon icon ion-pricetag button-small"></button></a>
 	</div>
 </div>

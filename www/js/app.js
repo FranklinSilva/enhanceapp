@@ -36,11 +36,6 @@ enhanceApp.config(function ($routeProvider) {
         controller: 'mainController'
     })
     
-    .when('#/warning', {
-        templateUrl: 'pages/warning.html',
-        controller: 'warningController'
-    })
-    
     .when('/card', {
         templateUrl: 'pages/cardPage.html',
         controller: 'cardPageController'

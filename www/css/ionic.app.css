@@ -7694,22 +7694,22 @@ a.button {
   font-style: italic;
   font-family: "futura-medium"; }
 
-.item.item-big.blue-card, .item.card-open-header.blue-card {
+.item.item-big.Azul-card, .item.card-open-header.Azul-card {
   background-color: #0FB1C0; }
 
-.item.item-big.red-card, .item.card-open-header.red-card {
+.item.item-big.Vermelho-card, .item.card-open-header.Vermelho-card {
   background-color: #B43E3E; }
 
-.item.item-big.orange-card, .item.card-open-header.orange-card {
+.item.item-big.Laranja-card, .item.card-open-header.Laranja-card {
   background-color: #B5783E; }
 
-.item.item-big.green-card, .item.card-open-header.green-card {
+.item.item-big.Verde-card, .item.card-open-header.Verde-card {
   background-color: #3EB55B; }
 
-.item.item-big.violet-card, .item.card-open-header.violet-card {
+.item.item-big.Violeta-card, .item.card-open-header.Violeta-card {
   background-color: #960093; }
 
-.item.item-big.yellow-card, .item.card-open-header.yellow-card {
+.item.item-big.Amarelo-card, .item.card-open-header.Amarelo-card {
   background-color: #B48E3E; }
 
 .item-footer {

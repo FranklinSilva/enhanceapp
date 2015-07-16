@@ -35,14 +35,29 @@
 				</ul>	
 				<label class="item item-input item-select">
 				    <div class="input-label">
-				      Lightsaber
+				      Cor do Card:
 				    </div>
-				    <select>
-				      <option>Blue</option>
-				      <option selected>Green</option>
-				      <option>Red</option>
+				    <select ng-model="task.Color">
+				      <option selected>Base</option>
+				      <option>Azul</option>
+				      <option>Verde</option>
+				      <option>Violeta</option>
+				      <option>Vermelho</option>
+				      <option>Laranja</option>
+				      <option>Amarelo</option>
 				    </select>
-				</label>				
+				</label>	
+				<label class="item item-input item-select">
+				    <div class="input-label">
+				      Ciclos Necessarios:
+				    </div>
+				    <select ng-model="task.CyclesNeeded">
+				      <option selected>1</option>
+				      <option>2</option>
+				      <option>3</option>
+				      <option>4</option>
+				    </select>
+				</label>			
 
 			</div>
 
