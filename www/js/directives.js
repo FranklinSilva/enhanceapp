@@ -24,3 +24,11 @@ enhanceApp.directive("cardBig", function() {
        replace: true
    }
 });
+
+enhanceApp.directive("editAdd", function() {
+   return {
+       restrict: 'AE',
+       templateUrl: 'directives/taskEditAdd.html',
+       replace: true
+   }
+});

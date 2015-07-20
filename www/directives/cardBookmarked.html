@@ -4,8 +4,8 @@
 			{{ task.Name }}
 		</div>
 		<div class="item item-footer">
-			<button class="button button-icon icon ion-power button-small" on-tap="openModal(1)"></button>
-			<button class="button button-icon icon ion-pricetag button-small" ng-model="card.bookmarked" on-tap="isBookmarked($index)"></button> 
+			<button class="button button-icon icon ion-power button-small"  on-tap="openModal(1); keepName(task);"></button>
+			<button class="button button-icon icon ion-flag button-small" ng-model="card.bookmarked" on-tap="isBookmarked($index)"></button> 
 			<a href="#card"><button on-tap="keepName(task)" class="button button-icon icon ion-log-in button-small"></button> </a>
 		</div>
 </div>

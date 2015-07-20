@@ -1,14 +1,16 @@
-<modal-cycle>
+<modal-cycle >
 		<ion-modal-view>
-		<ion-content>
+		<ion-content ng-controller="cycleController">
+			<button class="button-round icon ion-close-round balanced" on-tap="cycleBegin()"></button>
 			<p> "Random Message goes here" </p>
-			<h1>24:59</h1>
-			<progress max="2500" value="1500">
+			<h2>{{ task.Name }}</h2>
+			<h1 ng-model="displayTime">{{ displayTime }} </h1>
+			<progress max="{{ timeMax }}" value="{{ progress }}">
 				
 			</progress>
 			<button class="button-round icon ion-close-round balanced" on-tap="closeModal(1)"></button>
   				<label class="item item-input">
-    				<input type="text" placeholder="Write a comment">
+    				<textarea ng-model="Note" placeholder= "Write yours Comments!"></textarea> 
   				</label>
 		</ion-content>
 	</ion-modal-view>

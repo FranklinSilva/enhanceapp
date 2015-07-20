@@ -46,7 +46,8 @@ enhanceApp.factory('taskService', ['$q', function($q){
     getAllTasks: getAllTasks,
     addTask: addTask,
     updateTask: updateTask,
-    deleteTask: deleteTask
+    deleteTask: deleteTask,
+    keepName: keepName
   };
 
   function initDB() {
@@ -120,8 +121,9 @@ enhanceApp.factory('taskService', ['$q', function($q){
     }
 
     function keepName(task) {
-      return keepName = task;
+      keepName = task;
       console.log('passei por aqui' + task)
+      return keepName
     }
 
 }])

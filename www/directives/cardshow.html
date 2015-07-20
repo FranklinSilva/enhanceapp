@@ -10,28 +10,19 @@
 		<div class="item item-divider">
 			Lista de Ciclos Concluidos
 		</div>
-		<div class="item item-button-right">
-			Ciclo numero 1
-			<button class="button button-positive">
-				<i class="icon ion-ios-telephone"></i>
+		<div class="item item-button-right" ng-repeat="cycle in task.Cycles track by $index">
+			{{ cycle.Name }}
+			<button on-tap="openModal(3); getCycleInfo('{{cycle.Name}}', '{{cycle.Note}}');" class="button button-positive">
+				<i class="icon ion-information"></i>
 			</button>
+			<modal-notes></modal-notes>
 		</div>
-		<div class="item item-button-right">
-			Ciclo numero 2
-			<button class="button button-positive">
-				<i class="icon ion-ios-telephone"></i>
-			</button>
-		</div>
-		<div class="item item-button-right">
-			Ciclo numero 3
-			<button class="button button-positive">
-				<i class="icon ion-ios-telephone"></i>
-			</button>
-		</div>
-
 	</div>
 	<div class="item card-open-footer">
 		<button class="button button-icon icon ion-power button-small" on-tap="openModal(1)"></button>
-		<a href="#/">voltar<button class="button button-icon icon ion-pricetag button-small"></button></a>
+		<button class="button button-icon icon ion-android-create button-small" on-tap="openModal(2)"></button>
+		<a href="#/"><button class="button button-icon icon ion-android-done button-small" on-tap="completeTask()"></button></a>
+		<a href="#/"><button class="button button-icon icon ion-log-out button-small"></button></a>
+		<a href="#/"><button class="button button-icon icon ion-android-delete button-small" on-tap="deleteTask()" style="float: right;"> </button></a>
 	</div>
 </div>
