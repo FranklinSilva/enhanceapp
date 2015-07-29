@@ -18,7 +18,8 @@
     <script src="js/controllers.js"></script>
     <script src="js/directives.js"></script>
     <script src="js/services.js"></script>
-    <script src="js/pouchdb-3.6.0.min.js"></script>  
+    <script src="js/pouchdb-3.6.0.min.js"></script>
+    <script src="js/ng-cordova.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -28,7 +29,7 @@
     <ion-pane>
       <ion-header-bar ng-controller="headerController" class="bar-stable">
         <button class="button-icon button-icon-top icon ion-gear-b button-small"></button>
-        <button class="button-icon button-icon-top icon ion-compass button-small"></button>
+        <a href="/#history"><button class="button-icon button-icon-top icon ion-compass button-small"></button></a>
         <button class="button-icon button-icon-top icon ion-stats-bars button-small"></button>        
         <h1 class="title italic">Enhance</h1>
         <button class="button-round icon ion-plus-round positive" on-tap="modal.show()"></button>

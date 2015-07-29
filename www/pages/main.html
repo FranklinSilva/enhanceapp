@@ -1,9 +1,9 @@
-        <ion-slide-box delegate-handle="card-small-list" active-slide="1" show-pager="false" on-slide-changed="slideHasChanged($index)">
+        <ion-slide-box ng-if="tasks.length > 0" delegate-handle="card-small-list" active-slide="1" show-pager="false" on-slide-changed="slideHasChanged($index)">
 
           <ion-slide>    
             <div class="wrapper" ng-controller="warningController">
-              <h3> Warning Zone!! </h3>
-              <p>"These tasks are urgent and important, finish them quickly"</p>  
+              <h3> Zona de Urgência!! </h3>
+              <p>"Tarefas aqui são Urgentes e Importantes, termine-as primeiro."</p>  
               <div class="row">              
                   <card-bookmarked ng-repeat="task in tasks track by $index" ng-if="task.Important && task.Urgent && !task.Completed" ></card-bookmarked>
               </div>    
@@ -19,11 +19,16 @@
           </ion-slide>
           <ion-slide>
             <div class="wrapper" ng-controller="attentionController">
-              <h3>Attention Zone!!</h3>
-              <p>"Tasks here are urgent and non-important, don't make them ruine your important ones"</p> 
+              <h3>Zona de Atenção!!</h3>
+              <p>"Tarefas aqui são Urgentes e Não Importantes. Tenha cuidado em sua execucão, elas podem atrapalhar suas tarefas Importantes."</p> 
               <div class="row">
                 <card-bookmarked ng-repeat="task in tasks track by $index" ng-if="!task.Important && task.Urgent && !task.Completed"></card-bookmarked>
               </div>
             </div>
           </ion-slide>
         </ion-slide-box>
+        <div ng-if="tasks.length < 0" class="wrapper" ng-controller="tourController">
+           <h3>Estou vazio....</h3>
+              <p>"Comece realizando nosso tutorial de 5 passos necessários para obter o Máximo do Enhance"</p> 
+              <button class="button button-outline button-large button-energized" on-tap="modal.show()">Começar o Tour</button>
+        </div>

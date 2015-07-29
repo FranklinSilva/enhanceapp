@@ -7,7 +7,7 @@
 
 var db = null;
 
-var enhanceApp = angular.module('enhanceApp', ['ionic', 'ngRoute'])
+var enhanceApp = angular.module('enhanceApp', ['ionic', 'ngRoute', 'ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -40,6 +40,11 @@ enhanceApp.config(function ($routeProvider) {
     .when('/card', {
         templateUrl: 'pages/cardPage.html',
         controller: 'cardPageController'
+    })
+
+    .when('/history', {
+        templateUrl: 'pages/activityHistory.html',
+        controller: 'historyController'
     })
     
 });

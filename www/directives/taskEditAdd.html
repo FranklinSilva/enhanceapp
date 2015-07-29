@@ -1,18 +1,18 @@
 <div>
 	<div class="list">
 		<label class="item item-input">
-			<input type="text" ng-model="task.Name" placeholder="Task Name">
+			<input type="text" ng-model="task.Name" placeholder="Nome da Tarefa">
 		</label>
 		<label class="item item-input">
-			<textarea ng-model="task.Description" placeholder="Description"></textarea>
+			<textarea ng-model="task.Description" placeholder="Descrição"></textarea>
 		</label>
 		<label class="item item-input">
-			<span>Deadline:</span> <input type="task.Endate">
+			<span>Data de Conclusão:</span> <input type="date" placeholder="mês/dia/ano" ng-model="task.Endate">
 		</label>
 		<ul class="list">
 			<li class="item item-toggle">
-				Important?
-				<label class="toggle">
+				<button class="button button-info-ios button-energized button-clear"><i class="ion-ios-information"></i></button><span class="fix-top-position">Tarefa Importante?</span>
+				<label class="toggle fix-position">
 					<input ng-model="task.Important" type="checkbox">
 					<div class="track">
 						<div class="handle"></div>
@@ -20,22 +20,25 @@
 				</label>
 			</li>
 			<li class="item item-toggle">						
-				Urgent?
-				<label class="toggle">
+				<button class="button button-info-ios button-energized button-clear"><i class="ion-ios-information"></i></button><span class="fix-top-position">Tarefa Urgente?</span>
+				<label class="toggle fix-position">
 					<input ng-model="task.Urgent" type="checkbox">
 					<div class="track">
 						<div class="handle"></div>
 					</div>
 				</label>
-			</li>	
+			</li>
+			<li class="item" ng-if="showHint">
+				<p class="no-overload" ><span style="color: #3D9788">Tarefas Importantes:</span> É tudo que lhe permite progredir em seus resultados. São suas prioridades para melhoria de seu trabalho, estudo, relações pessoais etc.</p>
+				<p class="no-overload"><span style="color: #FF6F5C">Tarefas Urgentes:</span> São todas as tarefas que necessitam de imediata atenção, geralmente se caracterizam por atividades que tem sua data final de conclusão próxima.</p>
+			</li>
 		</ul>	
 		<label class="item item-input item-select">
 			<div class="input-label">
-				Cor do Card:
+				<span>Cor da Tarefa:</span>
 			</div>
 			<select ng-model="task.Color">
-				<option selected>Base</option>
-				<option>Azul</option>
+				<option selected>Azul</option>
 				<option>Verde</option>
 				<option>Violeta</option>
 				<option>Vermelho</option>
@@ -44,18 +47,11 @@
 			</select>
 		</label>	
 		<label class="item item-input item-select">
-			<div class="input-label">
-				Ciclos Necessarios:
-			</div>
-			<select ng-model="task.CyclesNeeded">
-				<option selected>1</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
-			</select>
+			<span>Horas Necessárias:</span> <input type="number" min="0.5" ng-model="task.CyclesNeeded">
 		</label>			
 
 	</div>
 
 	<button class="button-round icon ion-close-round balanced" on-tap="saveTask(); closeModal(2); refresh();"></button>
+	<button class="button-round icon ion-close-round" on-tap="showHint = true"></button>
 </div>

@@ -105,6 +105,12 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 	font-size: 22px;
 }
 
+.icon.ion-power.logo{
+  color: $font-white;
+  margin: 0 41%;
+  font-size: $font-size-large *2;
+}
+
 .item-big {
   padding-top: 150px ;
   padding-bottom: 8px ;
@@ -216,6 +222,10 @@ h1.italic{
 
 }
 
+.button-outline{
+    margin: 10% 20%;
+}
+
 .bar .button{
 	padding: 0 3px;
 }
@@ -232,26 +242,39 @@ h1.italic{
 	background-color: rgba(30, 30, 30, 0.9);
 }
 
-.modal p,h1,h2{
+.modal p,h1,h2,h5{
 	text-align: center;
+}
+
+.modal.modal-tour{
+  background-color: $assertive;
+}
+
+.modal.modal-tour button{
+  display: block;
+  margin: 0 auto;
+}
+.modal-tour .wrapper{
+  min-height: 95vh;
+  margin-top: 20px;
 }
 
 .modal p{
 	color: $light;
 	font-family: $font-family-light-sans-serif;
 	font-size: $font-size-small;
-	margin-bottom: 100px;
+	//margin-bottom: 100px;
 	margin-top: 10px;
 }
 
-.modal textarea, input[type="date"], span{
+.modal textarea, input[type="date"], span, input[type="text"]{
 	color: $light;
 	font-family: $font-family-light-sans-serif;
-	font-size: $font-size-small;
+	font-size: $font-size-base;
 	margin-top: 10px;
 }
 
-.modal h1,h2{
+.modal h1,h2,h5{
 	color: $font-white;
 	font-style: italic;
 }
@@ -299,14 +322,12 @@ progress[value]::-webkit-progress-value {
   padding: 0; }
   
 input[type="text"]{
-  font-size: $font-size-xsmall;
   color: $font-white;
   height: 25px;	
   border-bottom: 2px solid $positive;
 }
 
 input[type="date"]{
-  font-size: $font-size-small;
   color: $font-white;
   height: 45px;	
   border-bottom: 2px solid $positive;
@@ -324,6 +345,42 @@ textarea{
     margin: 0;
     padding-right: 10px;
     background-color: transparent; }
+
+.toggle.fix-position{
+  top: 20px;
+}
+
+.toggle .track{
+  background-color: $font-white;
+  border-color: $font-white;
+}
+
+.toggle input:checked + .track {
+  border-color: $positive;
+  background-color: $positive;
+}
+
+.toggle .handle{
+  background-color: $royal;
+}
+
+span.fix-top-position{
+  top: 7px;
+  position: relative;
+}
+
+.button.button-info-ios{
+  min-height: 0;
+  min-width: 0;
+  font-size: 28px;
+}
+
+p.no-overload, h2.no-overload{
+  overflow: visible;
+  white-space: initial;
+  text-align: left;
+}
+
 //END LABEL
 
 .row{
@@ -369,4 +426,27 @@ textarea{
 
 .list.list-inset{
   margin-top: 0;
+}
+
+/*ALERT*/
+.popup-container .popup{
+  background-color: $assertive;
+  -webkit-box-shadow: 0px 7px 33px 5px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 7px 33px 5px rgba(0,0,0,0.75);
+box-shadow: 0px 7px 33px 5px rgba(0,0,0,0.75);
+}
+.popup-head{
+  border: 0;
+}
+h3.popup-title{
+  color: $font-white;
+  font-size: $font-size-base;
+}
+
+.popup-body{
+  text-align: center;
+}
+
+.popup-buttons button.button-outline{
+  margin: 5% auto;
 }

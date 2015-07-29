@@ -2,6 +2,8 @@
 		<ion-modal-view>
 		<ion-content ng-controller="cycleController">
 			<button class="button-round icon ion-close-round balanced" on-tap="cycleBegin()"></button>
+			<p>divisor</p>
+			<button class="button-round icon ion-close-round balanced" on-tap="cancelCycle()"></button>
 			<p> "Random Message goes here" </p>
 			<h2>{{ task.Name }}</h2>
 			<h1 ng-model="displayTime">{{ displayTime }} </h1>
