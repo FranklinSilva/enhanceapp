@@ -7735,6 +7735,9 @@ h1.italic {
   border-radius: 5px;
   box-shadow: 2px 2px 5px #000; }
 
+.card a {
+  text-decoration: none; }
+
 .wrapper h3, p {
   color: #C0BCBC;
   text-align: center; }
@@ -7784,9 +7787,15 @@ h1.italic {
   background-color: #3D9788; }
 
 .balanced {
-  background-color: #FF6F5C;
-  display: block;
-  margin: 50px auto; }
+  background-color: #FF6F5C; }
+
+.energized {
+  background-color: #edc85f; }
+
+.button-group {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 2rem; }
 
 .button-outline {
   margin: 10% 20%; }
@@ -7821,18 +7830,29 @@ h1.italic {
 .modal p {
   color: #C0BCBC;
   font-family: "futura-condensedmedium";
-  font-size: 18px;
-  margin-top: 10px; }
+  font-size: 18px; }
+
+.random-page {
+  margin-bottom: 3rem;
+  margin-top: 3rem; }
 
 .modal textarea, input[type="date"], span, input[type="text"] {
   color: #C0BCBC;
   font-family: "futura-condensedmedium";
-  font-size: 20px;
-  margin-top: 10px; }
+  font-size: 20px; }
 
 .modal h1, h2, h5 {
   color: #EAEAEA;
-  font-style: italic; }
+  font-style: italic;
+  margin-top: 10px; }
+
+.modal h1 {
+  font-size: 5rem; }
+
+.modal h2 {
+  font-size: 2rem;
+  width: 80%;
+  margin: 1rem auto; }
 
 progress[value] {
   /* Reset the default appearance */
@@ -7863,6 +7883,11 @@ progress[value]::-webkit-progress-value {
   background-color: inherit;
   margin: -1px 5%; }
 
+.item.no-margin {
+  margin: 0;
+  border-bottom: 1px solid #EAEAEA;
+  color: #EAEAEA; }
+
 .item-input {
   padding: 0; }
 
@@ -7870,6 +7895,14 @@ input[type="text"] {
   color: #EAEAEA;
   height: 25px;
   border-bottom: 2px solid #3D9788; }
+
+input[type="Number"] {
+  font-size: 17px;
+  text-align: right;
+  color: #EAEAEA;
+  height: 25px;
+  border-bottom: 2px solid #3D9788;
+  margin-left: 7px !important; }
 
 input[type="date"] {
   color: #EAEAEA;
@@ -7880,12 +7913,19 @@ input[type="date"] {
 textarea {
   background-color: transparent;
   border-bottom: 2px solid #3D9788;
-  color: #EAEAEA; }
+  color: #EAEAEA;
+  height: 5rem; }
+
+.item-input {
+  margin-top: 15px; }
 
 .item-input input {
-  margin: 0;
   padding-right: 10px;
   background-color: transparent; }
+
+.item-select select {
+  background: #EAEAEA;
+  font-size: 12px; }
 
 .toggle.fix-position {
   top: 20px; }
@@ -7914,6 +7954,9 @@ p.no-overload, h2.no-overload {
   overflow: visible;
   white-space: initial;
   text-align: left; }
+
+h2:first-child {
+  margin-top: 20px; }
 
 .row {
   flex-wrap: wrap; }

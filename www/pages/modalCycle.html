@@ -1,19 +1,22 @@
 <modal-cycle >
 		<ion-modal-view>
 		<ion-content ng-controller="cycleController">
-			<button class="button-round icon ion-close-round balanced" on-tap="cycleBegin()"></button>
-			<p>divisor</p>
-			<button class="button-round icon ion-close-round balanced" on-tap="cancelCycle()"></button>
-			<p> "Random Message goes here" </p>
+			<p class="random-page"> "{{randomMessage}}" </p>
 			<h2>{{ task.Name }}</h2>
-			<h1 ng-model="displayTime">{{ displayTime }} </h1>
+			<h1 ng-model="displayTime">{{ displayTime }}</h1>
 			<progress max="{{ timeMax }}" value="{{ progress }}">
 				
 			</progress>
-			<button class="button-round icon ion-close-round balanced" on-tap="closeModal(1)"></button>
-  				<label class="item item-input">
-    				<textarea ng-model="Note" placeholder= "Write yours Comments!"></textarea> 
-  				</label>
+			<div class="button-group">
+				<button class="button-round icon ion-play positive" on-tap="cycleBegin()"></button>
+				<button class="button-round icon ion-close-round" on-tap="closeModal(1)"></button>
+				<button class="button-round icon ion-minus-circled balanced" on-tap="cancelCycle()"></button>
+			</div>	
+  			
+  			<label class="item item-input">
+    			<textarea ng-model="Note" placeholder= "Escreva suas observações"></textarea> 
+  			</label>
+
 		</ion-content>
 	</ion-modal-view>
 

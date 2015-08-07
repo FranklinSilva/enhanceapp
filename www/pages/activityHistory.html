@@ -1,5 +1,5 @@
 <div class="wrapper" ng-controller="historyController"> 
 	<h3>Tarefas Concluidas!!</h3>
-	<a href="/#/"><button class="button-round icon ion-log-out"></button></a>
+	<a style="text-decoration:none" href="/#/"><button class=" button button-full button-light"> Voltar para a Home </button></a>
 	<card-show ng-repeat="task in tasks track by $index" ng-if="task.Completed" ></card-show>
 </div>

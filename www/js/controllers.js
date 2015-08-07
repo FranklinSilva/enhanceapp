@@ -36,8 +36,8 @@ enhanceApp.controller('mainController', ['$scope', '$log', '$ionicModal', '$rout
 
     $scope.task.currentDate = $filter('date')(new Date(), 'dd,MM,yyyy').split(',');
     $scope.task.todayMath = $scope.task.currentDate[1] * 30 + parseInt($scope.task.currentDate[0]); 
-    twentyPercent = ($scope.task.limitDayMath * 20) / 100;
-    if (twentyPercent + $scope.task.todayMath >= $scope.task.limitDayMath && $scope.task.Urgent == false) {
+    twentyPercent = ($scope.task.limitDayMath * 1) / 100; 
+    if ($scope.task.limitDayMath - twentyPercent <= $scope.task.todayMath && $scope.task.Urgent == false) {
       console.log('Se tornou Urgente');
       $scope.task.Urgent = true;
       taskService.addTask($scope.task); 
@@ -123,11 +123,20 @@ enhanceApp.controller('attentionController', ['$scope', '$log', '$routeParams','
 enhanceApp.controller('headerController', ['$scope', '$log', '$routeParams','$ionicModal', '$ionicPopup', 'taskService', function($scope, $log, $routeParams, $ionicModal, $ionicPopup, taskService) {
 
   $ionicModal.fromTemplateUrl('pages/modalCreatePage.html', {
+    id: '2',
     scope: $scope,
     animation: 'slide-in-up'
   }).then(function(modal) {
-    $scope.modal = modal;
+    $scope.oModal2 = modal;
   });
+
+  $scope.closeModal = function(x) {
+    $scope.oModal2.hide();
+  };
+
+  $scope.openModal = function(x) {
+    $scope.oModal2.show();
+  };
 
   $scope.showAlert = function() {
    var alertPopup = $ionicPopup.alert({
@@ -279,17 +288,13 @@ enhanceApp.controller('cardPageController', ['$scope', '$log', '$routeParams','$
 
 enhanceApp.controller('cycleController', ['$scope', '$log', '$routeParams','$ionicModal','$ionicPlatform','$interval', '$timeout', '$filter','$ionicPopup', 'taskService','$cordovaMedia', function($scope, $log, $routeParams, $ionicModal,$ionicPlatform, $interval, $timeout, $filter, $ionicPopup, taskService, $cordovaMedia) {
 
-  $scope.Note = 'default';
+  $scope.Note = '';
   $scope.teste = function(){
     console.log('teste')
   }
 
-  $scope.cycle = function() {
 
-    console.log('ENTREI dentro da funcao do ciclo')
-
-  };
-
+$scope.displayTime = '24:00';
   $scope.cycleBegin = function() {
     $scope.alertBeginCycle(); //Alerta ciclo iniciou
     $scope.counter = $scope.task.Cycles.length;
@@ -372,7 +377,7 @@ enhanceApp.controller('cycleController', ['$scope', '$log', '$routeParams','$ion
       Name: $filter('date')(new Date(), 'yyyy-MM-dd'),
       Note: $scope.Note
     }
-    taskService.updateTask($scope.task);
+    taskService.saveTask($scope.task);
 
   };
 
@@ -410,7 +415,7 @@ enhanceApp.controller('cycleController', ['$scope', '$log', '$routeParams','$ion
    var alertPopup = $ionicPopup.alert({
      title: 'Parabéns!',
      cssClass: 'alert-dark-blue',
-     template: 'Ciclo finalizado. Se a tarefa foi concluida em sua totalidade, inicie um novo ciclo ou complete a atividade.',
+     template: 'Ciclo finalizado. Se a tarefa não foi concluida em sua totalidade, inicie um novo ciclo ou complete a atividade.',
      okType: 'button-positive button-clear'
    });
    alertPopup.then(function(res) {
@@ -514,3 +519,10 @@ $scope.showNotes = false;
 
 
 }]);
+
+enhanceApp.controller('settingsController', ['$scope', '$log', '$ionicModal', '$route','$ionicPlatform', 'bookmarking', 'taskService', '$filter', '$ionicPopup', function($scope, $log, $ionicModal, $route, $ionicPlatform, bookmarking, taskService, $filter, $ionicPopup) {
+
+
+
+}]);
+

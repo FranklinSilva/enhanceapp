@@ -46,5 +46,10 @@ enhanceApp.config(function ($routeProvider) {
         templateUrl: 'pages/activityHistory.html',
         controller: 'historyController'
     })
+
+    .when('/settings', {
+        templateUrl: 'pages/settingsPage.html',
+        controller: 'settingsController'
+    })
     
 });

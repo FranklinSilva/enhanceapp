@@ -4,7 +4,6 @@
 	</div>
 	<div class="item card-open-body">
 		<h3> Data de Conclusão: {{task.Endate | date:'dd/MM/yyyy'}}</h3>
-		<h3> {{task.CyclesNeeded}}</h5>
 		<h4>Descrição:</h4>
 		<p class="no-overflow">{{ task.Description }}</p>
 	</div>
@@ -23,7 +22,7 @@
 
 	</div>
 	<div ng-if="showButtons" class="item card-open-footer">
-		<button class="button button-icon icon ion-power button-small" on-tap="openModal(1)"></button>
+		<button class="button button-icon icon ion-play button-small" on-tap="openModal(1)"></button>
 		<button class="button button-icon icon ion-android-create button-small" on-tap="openModal(2)"></button>
 		<a href="#/"><button class="button button-icon icon ion-android-done button-small" on-tap="completeTask()"></button></a>
 		<a href="#/"><button class="button button-icon icon ion-log-out button-small"></button></a>

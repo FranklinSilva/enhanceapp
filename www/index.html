@@ -28,11 +28,10 @@
   <body ng-app="enhanceApp">
     <ion-pane>
       <ion-header-bar ng-controller="headerController" class="bar-stable">
-        <button class="button-icon button-icon-top icon ion-gear-b button-small"></button>
-        <a href="/#history"><button class="button-icon button-icon-top icon ion-compass button-small"></button></a>
-        <button class="button-icon button-icon-top icon ion-stats-bars button-small"></button>        
+        <a href="/#settings"><button class="button-icon button-icon-top icon ion-gear-b button-small"></button></a>
+        <a href="/#history"><button class="button-icon button-icon-top icon ion-compass button-small"></button></a>       
         <h1 class="title italic">Enhance</h1>
-        <button class="button-round icon ion-plus-round positive" on-tap="modal.show()"></button>
+        <button on-tap="openModal(2)" class="button-round icon ion-plus-round positive" ></button>
       </ion-header-bar>
       <ion-content>
         

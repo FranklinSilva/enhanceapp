@@ -29,7 +29,7 @@
 				</label>
 			</li>
 			<li class="item" ng-if="showHint">
-				<p class="no-overload" ><span style="color: #3D9788">Tarefas Importantes:</span> É tudo que lhe permite progredir em seus resultados. São suas prioridades para melhoria de seu trabalho, estudo, relações pessoais etc.</p>
+				<p class="no-overload" ><span style="color: #3D9788">Tarefas Importantes:</span> É tudo que lhe permite progredir em seus resultados. São suas prioridades para melhoria de seu trabalho, estudo, relações pessoais, qualidade de vida etc. <span style="color: #edc85f"> Tarefas não importantes </span> são geralmente relacionadas a atividades importantes de outros indivíduos.</p>
 				<p class="no-overload"><span style="color: #FF6F5C">Tarefas Urgentes:</span> São todas as tarefas que necessitam de imediata atenção, geralmente se caracterizam por atividades que tem sua data final de conclusão próxima.</p>
 			</li>
 		</ul>	
@@ -52,6 +52,9 @@
 
 	</div>
 
-	<button class="button-round icon ion-close-round balanced" on-tap="saveTask(); closeModal(2); refresh();"></button>
-	<button class="button-round icon ion-close-round" on-tap="showHint = true"></button>
+	<div class="button-group">
+		<button class="button-round icon ion-information energized" on-tap="showHint = true"></button>
+		<button class="button-round icon ion-plus-round positive" on-tap="saveTask(); refresh();"></button>
+		<button class="button-round icon ion-close-round balanced" on-tap="closeModal(2);"></button>
+	</div>
 </div>

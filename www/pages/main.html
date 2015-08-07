@@ -11,6 +11,8 @@
           </ion-slide>
           <ion-slide>
             <div class="wrapper" ng-controller="mainController"> 
+              <h3>Zona de Conforto!!</h3>
+              <p>"Mantenha a maioria das suas atividades nesta seção e finaliza-as antes de se tornarem urgentes."</p> 
               <div class="row">
                 <card-bookmarked ng-repeat="task in tasks track by $index" ng-if="task.Important && !task.Urgent && !task.Completed" ></card-bookmarked>
               </div>
@@ -27,7 +29,7 @@
             </div>
           </ion-slide>
         </ion-slide-box>
-        <div ng-if="tasks.length < 0" class="wrapper" ng-controller="tourController">
+        <div ng-if="tasks.length == 0" class="wrapper" ng-controller="tourController">
            <h3>Estou vazio....</h3>
               <p>"Comece realizando nosso tutorial de 5 passos necessários para obter o Máximo do Enhance"</p> 
               <button class="button button-outline button-large button-energized" on-tap="modal.show()">Começar o Tour</button>

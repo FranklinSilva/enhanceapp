@@ -36,7 +36,7 @@ $bar-title-font-size:             24px !default;
 $font-white: 						#EAEAEA !default;
 
 $font-family-sans-serif: 			"futura-medium" !default;
-$font-family-light-sans-serif:    	"futura-condensedmedium" !default;
+$font-family-light-sans-serif:    	"futura-condensedmedium" !default; 
 $font-family-serif:               	futura !default;
 $font-family-monospace:           	futura !default;
 
@@ -157,6 +157,10 @@ h1.italic{
 	box-shadow: 2px 2px 5px #000;
 }
 
+.card a{
+  text-decoration: none;
+}
+
 .wrapper h3,p{
 	color: $light;
 	text-align: center;
@@ -212,14 +216,20 @@ h1.italic{
 
 .positive{
 	  background-color: $positive;
-
 }
 
 .balanced{
 	  background-color: $balanced;
-	  display: block;
-	  margin: 50px auto;
+}
 
+.energized{
+    background-color: $energized;
+}
+
+.button-group{
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 2rem;
 }
 
 .button-outline{
@@ -263,20 +273,32 @@ h1.italic{
 	color: $light;
 	font-family: $font-family-light-sans-serif;
 	font-size: $font-size-small;
-	//margin-bottom: 100px;
-	margin-top: 10px;
+}
+
+.random-page{
+  margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 
 .modal textarea, input[type="date"], span, input[type="text"]{
 	color: $light;
 	font-family: $font-family-light-sans-serif;
 	font-size: $font-size-base;
-	margin-top: 10px;
 }
 
 .modal h1,h2,h5{
 	color: $font-white;
 	font-style: italic;
+  margin-top: 10px;
+}
+.modal h1{
+  font-size: 5rem;
+}
+
+.modal h2{
+  font-size: 2rem;
+  width: 80%;
+  margin: 1rem auto;
 }
 
 //PROGRESS BAR CYCLE
@@ -313,10 +335,17 @@ progress[value]::-webkit-progress-value {
 //END PROGRESS BAR
 
 //LABEL
-.item {
+.item{
   border-color: transparent;
   background-color: inherit;
   margin: -1px 5%; }
+
+.item.no-margin{
+  margin: 0;
+  border-bottom: 1px solid $font-white; 
+  color: $font-white;
+  
+}
 
 .item-input {
   padding: 0; }
@@ -325,6 +354,15 @@ input[type="text"]{
   color: $font-white;
   height: 25px;	
   border-bottom: 2px solid $positive;
+}
+
+input[type="Number"]{
+    font-size: 17px;
+    text-align: right;
+    color: $font-white;
+    height: 25px; 
+    border-bottom: 2px solid $positive;
+    margin-left: 7px !important;
 }
 
 input[type="date"]{
@@ -338,13 +376,21 @@ textarea{
 	background-color: transparent;
 	border-bottom: 2px solid $positive;
 	color: $font-white;
+  height: 5rem;
 }
 
+.item-input{
+      margin-top: 15px;
+}
 
 .item-input input {
-    margin: 0;
     padding-right: 10px;
     background-color: transparent; }
+
+.item-select select{
+  background: $font-white;
+  font-size: 12px;
+}
 
 .toggle.fix-position{
   top: 20px;
@@ -379,6 +425,10 @@ p.no-overload, h2.no-overload{
   overflow: visible;
   white-space: initial;
   text-align: left;
+}
+
+h2:first-child{
+  margin-top: 20px;
 }
 
 //END LABEL

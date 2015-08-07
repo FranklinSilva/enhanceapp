@@ -1,10 +1,10 @@
 <div ng-class="{col50: !task.Bookmarked, col100: task.Bookmarked}" class="col">
 	<div class="card">
-		<div ng-style="myStyle={'background-color':'{{ style.myStyle }}'}" class="item item-big {{task.Color}}-card">
+		<a href="#card" on-tap="keepName(task)"><div ng-style="myStyle={'background-color':'{{ style.myStyle }}'}" class="item item-big {{task.Color}}-card">
 			{{ task.Name }}
-		</div>
+		</div></a>
 		<div class="item item-footer">
-			<button class="button button-icon icon ion-power button-small"  on-tap="openModal(1); keepName(task);"></button>
+			<button class="button button-icon icon ion-play button-small"  on-tap="openModal(1); keepName(task);"></button>
 			<button class="button button-icon icon ion-flag button-small" ng-model="card.bookmarked" on-tap="isBookmarked($index)"></button> 
 			<a href="#card"><button on-tap="keepName(task)" class="button button-icon icon ion-log-in button-small"></button> </a>
 		</div>
