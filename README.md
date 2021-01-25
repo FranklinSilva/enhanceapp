@@ -29,3 +29,6 @@ What are the most important things in your life? Do they get as much care, empha
 <img width="400px" src="./docs/quadrants.png" />
 </p>
 
+### The Final Project file
+This link follows to the final version of my final project. There you can gather more information about what was done at the time.
+https://github.com/FranklinSilva/enhanceapp/blob/master/docs/tcc%2010.0.pdf
