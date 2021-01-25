@@ -13,10 +13,19 @@ With the enhance app, the user can run pomodoros that follows the technique's ru
 2. First Things First (https://www.amazon.com.br/First-Things-Stephen-R-Covey/dp/0684802031)
 What are the most important things in your life? Do they get as much care, emphasis, and time as you'd like to give them? Far from the traditional "be-more-efficient" time-management book with shortcut techniques, First Things First shows you how to look at your use of time totally differently. Using this book will help you create balance between your personal and professional responsibilities by putting first things first and acting on them. Covey teaches an organizing process that helps you categorize tasks so you focus on what is important, not merely what is urgent. -- Stephen Covey.
 
+#### Layout Overview
+<p float="left">
+<img width="600px" src="./docs/overview.png" />
+</p>
 
-<!--<p float="left">
-<img width="200px" src="./docs/splash.jpeg" />
-<img width="200px" src="./docs/library.jpeg" />
-<img width="200px" src="./docs/article.jpeg" />
-</p>-->
+#### Pomodoro Cycles and Task Cards
+<p float="left">
+<img width="400px" src="./docs/cycles.png" />
+<img width="200px" src="./docs/cards.png" />
+</p>
+
+#### First Things First Quadrants
+<p float="left">
+<img width="400px" src="./docs/quadrants.png" />
+</p>
 
